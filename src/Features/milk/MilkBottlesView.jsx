@@ -41,7 +41,7 @@ function MilkBottlesView() {
     <div className="cantiner">
       <div className="item">
         <p>Milk 1000ml : {milk1000ml}</p>
-        <p>(avilable : {ml1000})</p>
+        <p>(avilable : {ml1000 - milk1000ml})</p>
         <button
           onClick={() => {
             clearInterval(() => {
@@ -55,13 +55,11 @@ function MilkBottlesView() {
         >
           Add
         </button>
-        {flag1000ml ? (
-          <p style={{ color: "red" }}>only {ml1000} avilable</p>
-        ) : null}
+        {flag1000ml ? <p style={{ color: "red" }}>Store empty</p> : null}
       </div>
       <div className="item">
         <p>Milk 500ml : {milk500ml}</p>
-        <p>(avilable : {ml500})</p>
+        <p>(avilable : {ml500 - milk500ml})</p>
         <button
           onClick={() => {
             clearInterval(() => {
@@ -76,13 +74,11 @@ function MilkBottlesView() {
           Add
         </button>
 
-        {flag500ml ? (
-          <p style={{ color: "red" }}>only {ml500} avilable</p>
-        ) : null}
+        {flag500ml ? <p style={{ color: "red" }}>Store empty</p> : null}
       </div>
       <div className="item">
         <p>Milk 250ml : {milk250ml}</p>
-        <p>(avilable : {ml250})</p>
+        <p>(avilable : {ml250 - milk250ml})</p>
         <button
           onClick={() => {
             clearInterval(() => {
@@ -97,9 +93,7 @@ function MilkBottlesView() {
           Add
         </button>
 
-        {flag250ml ? (
-          <p style={{ color: "red" }}>only {ml250} avilable</p>
-        ) : null}
+        {flag250ml ? <p style={{ color: "red" }}>Store empty</p> : null}
       </div>
       <div className="cart">
         <div className="quantity ml1000">
